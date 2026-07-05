@@ -1,0 +1,6 @@
+{
+  "name": "Web Embed Menu Customizer",
+  "description": "Hệ thống Quản lý và Nhúng Trang Web Nội bộ Tiện ích của Power Service với cấu hình hình nền tĩnh, video động và 3D.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

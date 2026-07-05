@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Play", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Luôn ẩn thanh scrollbar dọc */
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+@keyframes gradientBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-bg {
+  animation: gradientBg 15s ease infinite;
+}

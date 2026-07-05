@@ -1,0 +1,148 @@
+import React from 'react';
+import {
+  Globe,
+  BookOpen,
+  Search,
+  Map,
+  Compass,
+  Code,
+  Video,
+  Music,
+  Briefcase,
+  Terminal,
+  Settings,
+  Info,
+  Cloud,
+  Image,
+  Heart,
+  ExternalLink,
+  Plus,
+  Trash2,
+  Edit2,
+  Check,
+  AlertTriangle,
+  RotateCw,
+  Folder,
+  ChevronRight,
+  ChevronLeft,
+  Share2,
+  Download,
+  Upload,
+  Sparkles,
+  Link2,
+  Bookmark,
+  CheckCircle,
+  Clock,
+  Menu,
+  X,
+  Laptop,
+  Database,
+  Cpu,
+  Activity,
+  Layout,
+  BarChart2,
+  TrendingUp,
+  MessageSquare,
+  FileText,
+  Users,
+  Shield,
+  Lock,
+  Bell,
+  Play,
+  Sliders,
+  User,
+  Home,
+  Mail,
+  Calendar,
+  Smartphone,
+  Server,
+  Layers,
+  Zap,
+  Eye,
+  Star,
+  Gift
+} from 'lucide-react';
+
+const iconsMap: Record<string, React.ComponentType<any>> = {
+  Globe,
+  BookOpen,
+  Search,
+  Map,
+  Compass,
+  Code,
+  Video,
+  Music,
+  Briefcase,
+  Terminal,
+  Settings,
+  Info,
+  Cloud,
+  Image,
+  Heart,
+  ExternalLink,
+  Plus,
+  Trash2,
+  Edit2,
+  Check,
+  AlertTriangle,
+  RotateCw,
+  Folder,
+  ChevronRight,
+  ChevronLeft,
+  Share2,
+  Download,
+  Upload,
+  Sparkles,
+  Link2,
+  Bookmark,
+  CheckCircle,
+  Clock,
+  Menu,
+  X,
+  Laptop,
+  Database,
+  Cpu,
+  Activity,
+  Layout,
+  BarChart2,
+  TrendingUp,
+  MessageSquare,
+  FileText,
+  Users,
+  Shield,
+  Lock,
+  Bell,
+  Play,
+  Sliders,
+  User,
+  Home,
+  Mail,
+  Calendar,
+  Smartphone,
+  Server,
+  Layers,
+  Zap,
+  Eye,
+  Star,
+  Gift
+};
+
+interface DynamicIconProps {
+  name: string;
+  className?: string;
+  size?: number;
+}
+
+export default function DynamicIcon({ name, className = '', size }: DynamicIconProps) {
+  // Normalize icon name (capitalize first letter, or exact match if it exists)
+  let iconName = name;
+  if (name && !iconsMap[name]) {
+    const formatted = name.charAt(0).toUpperCase() + name.slice(1);
+    if (iconsMap[formatted]) {
+      iconName = formatted;
+    }
+  }
+
+  const IconComponent = iconsMap[iconName] || Globe;
+  return <IconComponent className={className} size={size} />;
+}
